@@ -4,7 +4,7 @@
 
 ## author:ponychen
 
-## email:18709821294@163.com
+## email:18709821294@outlook.com
 
 ## key features:
 + generating series of input files for the calculation of second-order stiffness tensor （energy vs strain method)，as far supporting VASP, QE and Akai ab-inito programs
