@@ -1,0 +1,14 @@
+   ISTART =1
+   ISMEAR =  0
+   SIGMA  =  0.05
+   NELM   =   40 
+   EDIFF  =  1E-07
+   NSW    =   100
+   IBRION = 2 
+   EDIFFG =    -1E-02
+   LVDW=.TRUE.
+   LREAL=F
+   PREC=high
+   LWAVE= F 
+   LCHARG= F
+   ALGO=very

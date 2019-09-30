@@ -1,0 +1,53 @@
+#choose which type of system to perform
+3D                 #3D or 2D
+#choose which type of module to use
+vrh                #vrh or read or plot or debye or 3rd or 4rd
+#case 3D and vrh, change following parameters
+2                  #1:create input files 2:calculate modulus 
+0.01               #the max applied strain used, 0.01 default
+7                  #the number of sampling points
+vasp               #input_type,qe vasp elk kkr,as far support these three
+cubic              #cubic,hex,trig6,trig8,tetra6,tetra7,ortho,mono,tric,iso
+3                  #if you set input_type to kkr, then this line means number of atoms
+#case 3D and plot,change following parameters
+300                #number of points of each dimension of the polar system
+V                  #E:Young's modulus B:linear compressibility G:shear modulus V:Possoin's ratio
+ave                #max,min,ave of single crystal shear modulus
+#case 2D and vrh, change following parameters
+2                  #1:create input files 2:calculate modulus
+0.01               #the max applied strain used, 0.01 default
+7                  #the number of sampling points
+vasp               #input_type,qe vasp kkr,as far support these three
+hexa               #sq,hexa,rec,obl
+3                  #if you set input_type to kkr, then this line means number of atoms
+#case 2D and plot, change following parameters
+300                #number of points of the curve
+V                  #E:Young's modulus G:shear modulus V:Possion's ratio
+#case 3D and read, change following parameters
+cubic              #cubic,hex,trig6,trig8,tetra6,tetra7,ortho,mono,tric,iso
+#case 2D and read, change following parameters
+hexa               #sq,hexa,rec,obl
+#case 3D and debye, change following parameters
+0.04               #applied hydrostatic pressure to calcualte Gruneisen parameters
+24.38 14.83        #bulk and shear modulus(GPa) at zero strain
+28.30 16.57          #bulk and shear modulus under hydrostatic pressure
+2.165              #density of the compond, g*cm-3
+0.043              #number of atoms per volume, A-3
+2                  #number of atoms in the primitive cell
+46.096             #volume of cell, A*3
+29.22              #average atomic mass g/mol
+300                #temperature, K
+#case 3D and 3rd, change following parameters
+2                  #1:create input files 2:calculate modulus
+0.110              #the max applied strain used, 0.015 default
+9                  #the number of sampling points
+vasp               #input_type, qe vasp elk kkr,as far support these four
+cubic3rd           #as far only support cubic baravi lattice
+3                  #if you set input_type to kkr, then this line means number of atoms
+#case 3D and 4rd, change following parameters
+1                  #1:create input files 2:calculate modulus
+0.110              #the max applied strain used, 0.015 default
+9                  #the number of sampling points
+vasp               #input_type, qe vasp elk kkr,as far support these four
+cubic4rd           #as far only support cubic baravi lattice
+3                  #if you set input_type to kkr, then this line means number of atoms

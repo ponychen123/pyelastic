@@ -1,0 +1,30 @@
+the final mechanical result calculated by ponychen
+Stiffness tensor C_ij (GPa)
+   667.28      77.99      77.99       0.00       0.00       0.00
+    77.99     667.28      77.99       0.00       0.00       0.00
+    77.99      77.99     667.28       0.00       0.00       0.00
+     0.00       0.00       0.00     353.47       0.00       0.00
+     0.00       0.00       0.00       0.00     353.47       0.00
+     0.00       0.00       0.00       0.00       0.00     353.47
+compliance tensor S_ij (GPa-1)
+ 0.001536  -0.000161  -0.000161   0.000000   0.000000   0.000000
+-0.000161   0.001536  -0.000161   0.000000   0.000000   0.000000
+-0.000161  -0.000161   0.001536   0.000000   0.000000   0.000000
+ 0.000000   0.000000   0.000000   0.002829   0.000000   0.000000
+ 0.000000   0.000000   0.000000   0.000000   0.002829   0.000000
+ 0.000000   0.000000   0.000000   0.000000   0.000000   0.002829
+some mechanical properties for polycrystalline
+  schem  |  Bulk K(GPa)  |  Shear G(GPa)  |  Young's E(GPa)  |  Possion's V  |  Vickers hardness (Chen)  |  Vickers hardness (Tian) 
+-----------------------------------------------------------------------------
+  vogit  |     274.42  |     329.94  |     706.62  |       0.07  |      70.78  |      68.84
+  reuss  |     274.42  |     327.33  |     702.62  |       0.07  |      69.76  |      67.83
+  hill   |     274.42  |     328.63  |     704.62  |       0.07  |      70.27  |      68.33
+-----------------------------------------------------------------------------
+Isotropic Poisson's ratio:         0.07
+Pugh ratio:         1.20
+Cauthy pressure(GPa):      -275.48
+Chung-Buessem anisotropy index:         0.00
+Universal elestic anisotropy index:         0.04
+your system are mechanical stable!
+
+Goooooooooooooooooooooooooooooooooooooooooooooodbye!

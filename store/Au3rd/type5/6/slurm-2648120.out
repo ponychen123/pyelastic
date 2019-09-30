@@ -1,0 +1,34 @@
+ running on   24 total cores
+ distrk:  each k-point on   24 cores,    1 groups
+ distr:  one band on    8 cores,    3 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jan 14 2019 14:48:31) complex          
+  
+ POSCAR found type information on POSCAR  Au
+ POSCAR found :  1 types and       4 ions
+ scaLAPACK will be used
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR found type information on POSCAR  Au
+ POSCAR found :  1 types and       4 ions
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1     0.275487841401E+03    0.27549E+03   -0.22638E+04 92034   0.152E+03
+DAV:   2    -0.867556290688E+01   -0.28416E+03   -0.27636E+03105120   0.329E+02
+DAV:   3    -0.136767445465E+02   -0.50012E+01   -0.49737E+01103311   0.460E+01
+DAV:   4    -0.137056943170E+02   -0.28950E-01   -0.28939E-01104220   0.361E+00
+DAV:   5    -0.137059808568E+02   -0.28654E-03   -0.28653E-03107847   0.372E-01    0.174E+01
+RMM:   6    -0.126757105811E+02    0.10303E+01   -0.26245E+00 91152   0.106E+01    0.112E+01
+RMM:   7    -0.126103837776E+02    0.65327E-01   -0.32005E-01 91206   0.355E+00    0.504E+00
+RMM:   8    -0.126006552519E+02    0.97285E-02   -0.16799E-02 91205   0.853E-01    0.537E-01
+RMM:   9    -0.126005400168E+02    0.11524E-03   -0.28085E-04 91202   0.945E-02    0.462E-02
+RMM:  10    -0.126005524122E+02   -0.12395E-04   -0.20384E-05 91185   0.340E-02    0.380E-02
+RMM:  11    -0.126005546136E+02   -0.22014E-05   -0.75508E-07 50306   0.520E-03    0.346E-03
+RMM:  12    -0.126005546309E+02   -0.17358E-07   -0.16005E-07 47846   0.255E-03
+   1 F= -.12600555E+02 E0= -.12597378E+02  d E =-.126006E+02
+ curvature:   0.00 expect dE= 0.000E+00 dE for cont linesearch  0.000E+00
+ trial: gam= 0.00000 g(F)=  0.594E-14 g(S)=  0.000E+00 ort = 0.000E+00 (trialstep = 0.100E+01)
+ search vector abs. value=  0.100E-09
+ reached required accuracy - stopping structural energy minimisation

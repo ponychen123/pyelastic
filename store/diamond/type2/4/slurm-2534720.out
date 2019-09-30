@@ -1,0 +1,59 @@
+ running on   24 total cores
+ distrk:  each k-point on   24 cores,    1 groups
+ distr:  one band on    1 cores,   24 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jan 14 2019 14:48:31) complex          
+  
+ POSCAR found type information on POSCAR  C 
+ POSCAR found :  1 types and       8 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default,   NCORE=1            might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ WARNING: for PREC=h ENMAX is automatically increase by 25 %
+        this was not the case for versions prior to vasp.4.4
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR found type information on POSCAR  C 
+ POSCAR found :  1 types and       8 ions
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1     0.100820413979E+03    0.10082E+03   -0.25908E+04  9408   0.199E+03
+DAV:   2    -0.723823562940E+02   -0.17320E+03   -0.17088E+03 14952   0.225E+02
+DAV:   3    -0.752091560357E+02   -0.28268E+01   -0.28268E+01 10920   0.405E+01
+DAV:   4    -0.752287164382E+02   -0.19560E-01   -0.19560E-01 17688   0.263E+00
+DAV:   5    -0.752287196662E+02   -0.32280E-05   -0.32271E-05 10560   0.373E-02    0.164E+01
+DAV:   6    -0.734402868133E+02    0.17884E+01   -0.13493E+00 11232   0.618E+00    0.107E+01
+DAV:   7    -0.728415118967E+02    0.59877E+00   -0.17531E+00 13632   0.712E+00    0.225E+00
+DAV:   8    -0.728399619318E+02    0.15500E-02   -0.23950E-02 15120   0.117E+00    0.119E-01
+DAV:   9    -0.728401443186E+02   -0.18239E-03   -0.46041E-04 13848   0.142E-01    0.615E-02
+DAV:  10    -0.728402672835E+02   -0.12296E-03   -0.11690E-04 14304   0.856E-02    0.482E-03
+DAV:  11    -0.728402684360E+02   -0.11525E-05   -0.16532E-06 14760   0.101E-02    0.286E-03
+DAV:  12    -0.728402687860E+02   -0.35002E-06   -0.67619E-08 14160   0.235E-03    0.152E-04
+DAV:  13    -0.728402687952E+02   -0.92168E-08   -0.13836E-10 14784   0.925E-05
+   1 F= -.72840269E+02 E0= -.72840269E+02  d E =-.728403E+02
+ curvature:   0.00 expect dE= 0.000E+00 dE for cont linesearch  0.000E+00
+ trial: gam= 0.00000 g(F)=  0.794E-60 g(S)=  0.000E+00 ort = 0.000E+00 (trialstep = 0.100E+01)
+ search vector abs. value=  0.100E-09
+ reached required accuracy - stopping structural energy minimisation

@@ -1,0 +1,3 @@
+third order elastic constants calculated by ponycehn
+c111  c112  c144  c155  c456  c123  unit GPa
+ -1207.07    -847.12       6.89    -615.88      62.41    -275.01
