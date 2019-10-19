@@ -4,10 +4,10 @@
 
 ## author:ponychen
 
-## email:18709821294@163.com
+## email:18709821294@outlook.com
 
 ## key features:
-+ generating series of input files for the calculation of second-order stiffness tensor （energy vs strain method)，as far supporting VASP, QE and Akai ab-inito programs
++ generating series of input files for the calculation of second-order stiffness tensor （energy vs strain method)，as far supporting VASP, QE, Elk and Akai ab-inito programs
 + applying the Vogit, Reuss and Hill averaging procedure in order to obtain an evaluation of the bulk, shear, Young's moduli as well as
 the Possion ratio of poly-crystalline samples, and so on
 + plot 2D and 3D anisotropic representation of elastic properties in single crystal
