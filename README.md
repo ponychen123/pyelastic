@@ -20,12 +20,14 @@ the Possion ratio of poly-crystalline samples, and so on
 + inspired by [ELAM](https://www.sciencedirect.com/science/article/pii/S0010465510003401)
 + inspired by [gibbs2](https://www.sciencedirect.com/science/article/pii/S0010465511001652)
 + inspired by [paper](https://journals_aps.gg363.site/prb/abstract/10.1103/PhysRevB.95.155206) of Tiantian Jia
-+ greate thanks to the guidance from 李二狗(狗哥) and Vei Wang
++ great thanks to the guidance from 李二狗(狗哥) and Vei Wang
 
 ## required environment
 [python3](https://www.python.org/) [numpy](http://www.numpy.org/) [scipy](https://www.scipy.org/scipylib/index.html) [mayavi](http://docs.enthought.com/mayavi/mayavi/) [PyQt](https://sourceforge.net/projects/pyqt/files/PyQt5/) [matplotlib](https://matplotlib.org/)
 
 ## update history
+2019/10/19：ponychen add tools foder and some postprocessing scripts will be there
+
 2019/09/30: ponychen add support for TOEC and FOEC calculation for cubic system
 
 2019/09/21：ponychen add support for elk format
