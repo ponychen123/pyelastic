@@ -1,6 +1,6 @@
 ![image](https://github.com/ponychen123/software/blob/master/pyelastic/images/156835383594723.png)
 
-# pyelasitc is python based computer program for calculating the stiffness tensor and related mechanical and thermodynamical properties 
+# pyelasitc is a python based computer program for calculating the stiffness tensor and related mechanical and thermodynamical properties 
 
 ## author:ponychen
 
