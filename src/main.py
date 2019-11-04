@@ -10,8 +10,10 @@ import iio
 import strain
 import analy
 import subprocess
+import standard
 
 #some default parameters
+standarding = True # if false, you should make sure that your structure orientation is right
 f = open("input.elastic","r")
 inputfile = f.readlines()
 f.close()
@@ -40,6 +42,11 @@ if mode == 1:
     else:
         print("please specift correct input type.")
     #create series of applied strain matrix
+
+    #standarize the axis 
+    if standarding:
+        axis = standard.get_standard(axis,bravi_type)
+
     #sampling is the list storing all the strain
     strain_tensor, sampling = strain.addstrain(max_strain,numbers,bravi_type)
     

@@ -1,9 +1,9 @@
 #choose which type of system to perform
 3D                 #3D or 2D
 #choose which type of module to use
-plot                #vrh or read or plot or debye or 3rd or 4rd
+vrh                #vrh or read or plot or debye or 3rd or 4rd
 #case 3D and vrh, change following parameters
-2                  #1:create input files 2:calculate modulus 
+1                  #1:create input files 2:calculate modulus 
 0.01               #the max applied strain used, 0.01 default
 7                  #the number of sampling points
 vasp               #input_type,qe vasp elk kkr,as far support these three
