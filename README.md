@@ -26,6 +26,9 @@ the Possion ratio of poly-crystalline samples, and so on
 [python3](https://www.python.org/) [numpy](http://www.numpy.org/) [scipy](https://www.scipy.org/scipylib/index.html) [mayavi](http://docs.enthought.com/mayavi/mayavi/) [PyQt](https://sourceforge.net/projects/pyqt/files/PyQt5/) [matplotlib](https://matplotlib.org/)
 
 ## update history
+2019/11/04: ponychen add standard module. Because ponychen is very lazy, the c axis must keep orthogonality with ab plane in monoclinic
+lattice, that means the c axis is chosen as unique axis. In Elastic, all possibe cell oreientations are considered, but ponychen is a lazy man. so, make sure c is unique!!!! this is a tricky problem while we want to reduce calculation steps...
+
 2019/10/19：ponychen add tools foder and some postprocessing scripts will be there
 
 2019/09/30: ponychen add support for TOEC and FOEC calculation for cubic system
@@ -38,7 +41,7 @@ the Possion ratio of poly-crystalline samples, and so on
 ### install
 no need to complile this program ( python based ), but you should give execute permission to all the executable files in src foder. Meanwhile, give execyte permission to pyelastic.sh in the main folder
 ### code structure
-all the necessacery modules and programs are under src folder, the main program pyelastic.sh in the main folder is written in bash shell. orig folder containing the undistorted structure file and relative input files，input.elastic in the main folder storing the parameters
+all the necessacery modules and programs are under src folder, the main program pyelastic.sh in the main folder is written in bash shell. orig folder containing the undistorted structure file and relative input files，input.elastic in the main folder storing the parameters, tools folder contains useful processing scripts.
 ### uasge
 + firstly specify the second and fourth columns of input.elastic. in column 2, choose your dimension of system (2D or 3D, you should alian your Z aixs to the direction of vacuum layer if you choose 2D). in column 4, choose calculation type (vrh, read, plot, debye, 3rd or 4rd). vrh means calculating mechanical properties by energy vs strain method, read means calculating mechanical properties by reading stiffness tensor from modulus.txt, plot means plot anisotropic single crystal properties by reading stiffness tensor from modulus.txt.  debye means calculating Debye temperature related thermo properties. 3rd means TOEC caluculation and 4rd means FOEC calculation. after confirm columns 2 and 4， you just need go to relative block and change default parameters as you like
 + case 3D and vrh: trig6 bravi type containing 32, 3m, -32/m. trig8 bravi type containing 3, -3. tetra6 bravi_type containing 422, 4mm, -42m, 4/mmm. tera7 bravi type containing 4, -4, 4/m. iso means isotrobic. this function is a two step process. Firstly you should set mode to 1, and this code will generating series of typeXXX folders containing distorted structures. you should do scf or relaxation (but keep cell fixed) in all sub folders ( you can copy all the folders to your clusters）. After this, set mode to 2 and code will read from all the typeXXX folders and output finalresult.txt and modulus.txt (containing stiffness tensor for other use)
