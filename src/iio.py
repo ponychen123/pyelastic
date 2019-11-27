@@ -221,3 +221,14 @@ def finalout4rd(modulus):
     f.write("%9.2f %9.2f %9.2f %9.2f %9.2f %9.2f %9.2f %9.2f %9.2f %9.2f %9.2f" % (\
             c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7],c[8],c[9],c[10]))
     f.close()
+
+def eosout(CX,CY,X,Y,label):
+    #output the curve date of EOS
+    with open("oldeos.txt","w+") as f:
+        for i in range(len(X)):
+            f.write("%9.2f %9.2f \n" % (X[i],Y[i]))
+    with open("neweos.txt","w+") as f:
+        f.write(label+"\n")
+        for i in range(len(CX)):
+            f.write("%9.6f %9.6f \n" % (CX[i], CY[i]))
+

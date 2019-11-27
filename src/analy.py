@@ -7,6 +7,7 @@
 import numpy as np
 from scipy.linalg import solve
 from scipy.optimize import leastsq
+from scipy.optimize import curve_fit
 
 def getparameter(results,types,numbers,max_strain,axis,bravi_type):
     #this function output the b in Ax=b
@@ -327,3 +328,92 @@ def checkstable(modulus,bravi_type):
     
     return b
 
+def caleos(strain_tensor, axis, results, cal_type):
+    #this function fitting the EOS
+    volume = getvolume(axis, "cubic") #why this function need inputing bravis type?how stupid i am..
+    X = np.array([i**3*volume for i in strain_tensor])
+    Y = np.array(results[0])
+    CX = np.linspace(np.min(X)-1,np.max(X)+1, 1000)
+    if cal_type == "Murn":
+        p0 = [2,2,2,2]
+        para = leastsq(murnerror,p0,args=(X,Y),maxfev=500000)
+        a,b,c,d = para[0]
+        B1 = 1.0 - b
+        B0 = B1*c
+        V0 = (a*B1*(B1-1)/B0)**(1/B1)
+        B0 *= 160.2
+        CY = murn([a,b,c,d],CX)
+        label = "Murnaghan EOS"
+    elif cal_type == "BM2":
+        popt, pcov = curve_fit(BM2,X,Y,p0=[0.9,71,-100])
+        B0, V0,E0 = popt[0],popt[1],popt[2]
+        B0 *= 160.2
+        CY = BM2(CX,B0/160.2,V0,E0)
+        label = "second order Birch-Murnaghan EOS"
+    elif cal_type == "BM3":
+        popt, pcov = curve_fit(BM3,X,Y,p0=[0.9,-0.2,71,-100])
+        B0,B1,V0,E0 = popt
+        CY = BM3(CX,B0,B1,V0,E0)
+        label = "third order Birch-Murnaghan EOS"
+        B0 *= 160.2
+    elif cal_type == "BM4":
+        popt, pcov = curve_fit(BM4,X,Y,p0=[0.9,-0.2,0.2,71,-100])
+        B0,B1,B2,V0,E0 = popt
+        CY = BM4(CX,B0,B1,B2,V0,E0)
+        label = "fourth order Birch-Murnaghan EOS"
+        B0 *= 160.2
+    elif cal_type == "PT2":
+        popt, pcov = curve_fit(PT2,X,Y,p0=[0.9,71,-100])
+        B0,V0,E0 = popt
+        CY = PT2(CX,B0,V0,E0)
+        label = "second order Poirier-Tarantola EOS"
+        B0 *= 160.2
+    elif cal_type == "PT3":
+        popt, pcov = curve_fit(PT3,X,Y,p0=[0.9,-0.1,71,-100])
+        B0,B1,V0,E0 = popt
+        CY = PT3(CX,B0,B1,V0,E0)
+        label = "third order Poirier-Tarantola EOS"
+        B0 *= 160.2
+    elif cal_type == "PT4":
+        popt, pcov = curve_fit(PT4,X,Y,p0=[0.9,-0.1,-0.1,71,-100])
+        B0,B1,B2,V0,E0 = popt
+        CY = PT4(CX,B0,B1,B2,V0,E0)
+        label = "fourth order Poirier-Tarantola EOS"
+        B0 *= 160.2
+    elif cal_type == "Vinet":
+        popt, pcov = curve_fit(Vinet,X,Y,p0=[0.9,-0.1,71,-100])
+        B0,B1,V0,E0 = popt
+        CY = Vinet(CX,B0,B1,V0,E0)
+        label = "Vinet EOS"
+        B0 *= 160.2
+
+    return B0, V0, CX, CY ,X, Y,label
+
+def murn(params,x):
+    a,b,c,d= params
+    return a*x**b+c*x+d
+def murnerror(params,x,y):
+    return murn(params, x)-y
+def BM2(x,B0,V0,E0):
+    return E0 + 9/8*B0*V0**(7/3)*((1/x)**(2/3)-1/V0**(2/3))**2
+def BM3(x,B0,B1,V0,E0):
+    return E0+9/16*V0*B0*((x/V0)**(2/3)-1)**2/(x/V0)**(7/3)*\
+            ((x/V0)**(1/3)*(B1-4)-(x/V0)*(B1-6))
+def BM4(x,B0,B1,B2,V0,E0):
+    f = 1/2*((V0/x)**(2/3)-1)
+    H = B0*B2+B1**2
+    return E0+3/8*V0*B0*f**2*((9*H-63*B1+143)*f**2+12*(B1-4)*f+12)
+def PT2(x,B0,V0,E0):
+    f = (np.log(x/V0))*1/3
+    return E0+9/2*B0*V0*f**2
+def PT3(x,B0,B1,V0,E0):
+    f = 1/3*np.log(x/V0)
+    return E0+9/2*B0*V0*f**2*((B1+2)*f+1)
+def PT4(x,B0,B1,B2,V0,E0):
+    f = 1/3*np.log(x/V0)
+    H = B2*B0+B1**2
+    return E0+9*B0*V0*f**2*(3*(H+3*B1+3)*f**2+4*(B1+2)*f+4)
+def Vinet(x,B0,B1,V0,E0):
+    ff = (x/V0)**(1/3)
+    return E0+4*B0*V0/(B1-1)**2-2*B0*V0/(B1-1)**2*(3*(B1-1)*(ff-1)+2)*\
+            np.exp(-3/2*(B1-1)*(ff-1))

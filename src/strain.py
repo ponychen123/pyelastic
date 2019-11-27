@@ -203,3 +203,15 @@ def spc(strain_type,sampling):
 
     return tmp
 
+def addeosstrain(max_strain,numbers):
+    #this function output strain tensor for eos calcuation
+    step = 2*max_strain/(numbers-1)
+    sampling = [-max_strain+i*step for i in range(numbers)]
+    added = [i+1.0 for i in sampling]
+    return added,sampling
+
+def geteostensor(added,axis,numbers):
+    addd = np.zeros([1,numbers,3,3])
+    for i in range(numbers):
+        addd[0,i] = np.dot(axis,added[i])
+    return addd

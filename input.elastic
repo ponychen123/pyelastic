@@ -1,7 +1,7 @@
 #choose which type of system to perform
 3D                 #3D or 2D
 #choose which type of module to use
-vrh                #vrh or read or plot or debye or 3rd or 4rd
+eos                #vrh or read or plot or debye or 3rd or 4rd or eos
 #case 3D and vrh, change following parameters
 1                  #1:create input files 2:calculate modulus 
 0.01               #the max applied strain used, 0.01 default
@@ -51,3 +51,9 @@ cubic3rd           #as far only support cubic baravi lattice
 vasp               #input_type, qe vasp elk kkr,as far support these four
 cubic4rd           #as far only support cubic baravi lattice
 3                  #if you set input_type to kkr, then this line means number of atoms
+#case 3D and eos, change following parameters
+2                  #1:create input files 2:calculate eos parameters
+BM4               #type of equation:Murn BM2 BM3 BM4 PT2 PT3 PT4 Vinet
+15                 #number of sampling
+0.02               #max strain
+vasp               #input_type

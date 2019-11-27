@@ -41,3 +41,7 @@ fi
 if [ "$sys_type" == "3D" ] && [ "$cal_type" == "4rd" ];then
 	python3 src/4rd.py
 fi
+
+if [ "$sys_type" == "3D" ] && [ "$cal_type" == "eos" ];then
+	python3 src/eos.py
+fi
