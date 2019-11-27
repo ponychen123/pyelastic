@@ -14,6 +14,7 @@ the Possion ratio of poly-crystalline samples, and so on
 + determining the sound velocities, Debye temperature, Gruneison parameter and lattice thermal conductivity using elastic properties
 + roughly calculating the pressure-temperature dependent thermodynamic properties of quasiharmonic approximation (Debye-Slater model)
 + calculating third and fourth oder elastic constants, as far only support cubic system
++ calculating equition of states
 
 ## acknowledgement
 + inspired by [VASPKIT](http://vaspkit.com/)
