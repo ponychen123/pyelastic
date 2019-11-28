@@ -27,6 +27,7 @@ the Possion ratio of poly-crystalline samples, and so on
 [python3](https://www.python.org/) [numpy](http://www.numpy.org/) [scipy](https://www.scipy.org/scipylib/index.html) [mayavi](http://docs.enthought.com/mayavi/mayavi/) [PyQt](https://sourceforge.net/projects/pyqt/files/PyQt5/) [matplotlib](https://matplotlib.org/)
 
 ## update history
+2019/11/27: ponychen add support for calculation of EOS.
 2019/11/04: ponychen add standard module. Because ponychen is very lazy, the c axis must keep orthogonality with ab plane in monoclinic
 lattice, that means the c axis is chosen as unique axis. In Elastic, all possibe cell oreientations are considered, but ponychen is a lazy man. so, make sure c is unique!!!! this is a tricky problem while we want to reduce calculation steps...
 
