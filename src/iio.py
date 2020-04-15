@@ -175,7 +175,7 @@ def d2output(c,ifstable):
     ff = open("modulus.txt","w+")
     s = np.linalg.inv(c)
     Ex = (c[0,0]*c[1,1]-c[0,1]**2)/c[1,1]
-    Ey = (c[0,0]*c[1,1]-c[0,1]**2)/c[1,1]
+    Ey = (c[0,0]*c[1,1]-c[0,1]**2)/c[0,0]
     Gxy = c[2,2]
     Vxy = c[1,0]/c[1,1]
     Vyx = c[0,1]/c[0,0]
