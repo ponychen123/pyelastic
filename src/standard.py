@@ -18,7 +18,7 @@ def get_standard(old_axis,bravi_type):
     new_axis = np.zeros([3,3])
 
     if bravi_type == "cubic" or bravi_type == "tetra6" or \
-            bravi_typr == "tetra7" or bravi_type == "ortho":
+            bravi_type == "tetra7" or bravi_type == "ortho":
         new_axis[0,0] = la
         new_axis[1,1] = lb
         new_axis[2,2] = lc
